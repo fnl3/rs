@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { StaticQuery, graphql } from 'gatsby';
+import { StaticQuery, graphql, Link } from 'gatsby';
 import Img from 'gatsby-image';
 
 import { Container } from '@components/global';
@@ -12,7 +12,7 @@ const Header = () => (
       query {
         art_build: file(
           sourceInstanceName: { eq: "art" }
-          name: { eq: "build" }
+          name: { eq: "fast" }
         ) {
           childImageSharp {
             fluid(maxWidth: 1400) {
@@ -31,16 +31,12 @@ const Header = () => (
             </Art>
             <Text>
               <h1>
-                Fast in
-                <br />
-                every way
-                <br />
-                that matters
+                Before The Swipe
               </h1>
               <br />
               <p>
                 <StyledExternalLink href="https://github.com/ajayns/gatsby-absurd">
-                  Check out source &nbsp;&#x2794;
+                  Get Started &nbsp;&#x2794;
                 </StyledExternalLink>
               </p>
             </Text>
@@ -100,7 +96,7 @@ const Text = styled.div`
 
 const StyledExternalLink = styled(ExternalLink)`
   color: inherit;
-  text-decoration: none;
+  text-decoration: none;  
 
   &:hover {
     color: ${props => props.theme.color.black.regular};
