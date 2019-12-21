@@ -35,9 +35,10 @@ const Header = () => (
               </h1>
               <br />
               <p>
-                <StyledExternalLink href="https://github.com/ajayns/gatsby-absurd">
+                {/* Modified below line to re-route to page 2, instead of opening an external link */}
+                <StyledLink to="/page-2">
                   Get Started &nbsp;&#x2794;
-                </StyledExternalLink>
+                </StyledLink>
               </p>
             </Text>
           </Grid>
@@ -94,6 +95,7 @@ const Text = styled.div`
   }
 `;
 
+// pass in External Link component as argument
 const StyledExternalLink = styled(ExternalLink)`
   color: inherit;
   text-decoration: none;  
@@ -102,5 +104,15 @@ const StyledExternalLink = styled(ExternalLink)`
     color: ${props => props.theme.color.black.regular};
   }
 `;
+
+// pass in Link component as argument
+const StyledLink = styled(Link)`
+  color: inherit;
+  text-decoration: none;  
+
+  &:hover {
+    color: ${props => props.theme.color.black.regular};
+  }
+`
 
 export default Header;
