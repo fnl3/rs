@@ -1,16 +1,23 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import { Router } from "@reach/router"
+
 
 import Layout from '@common/Layout';
 import { Container } from '@components/global';
 
+import StartForm from '@sections/StartForm'
+import Test from '@sections/Test'
+
+
 const SecondPage = () => (
   <Layout>
     <Container>
-      <h1>Hi from the second page - testing application</h1>
-      <p>Welcome to page 2</p>
-      <Link to="/">Go back to the homepage</Link>
+      <Router>
+        <StartForm path="/page-2"/>
+        <Test path="/page-2/test"></Test>
+      </Router>
     </Container>
+    
   </Layout>
 );
 
